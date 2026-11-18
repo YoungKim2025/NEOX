@@ -1,21 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
 
-<!-- 넷틀리파이 배지 원천 차단 -->
-<style>
-    a[href*="netlify.com"],
-    div[style*="z-index: 99999"] {
-        display: none !important;
-        visibility: hidden !important;
-        opacity: 0 !important;
-        pointer-events: none !important;
-        width: 0 !important;
-        height: 0 !important;
-        position: absolute !important;
-        z-index: -9999 !important;
-    }
-</style>
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -89,8 +74,19 @@
         </div>
     </footer>
 
-    <!-- 네트워크 애니메이션(script.js)은 배경 이미지로 대체되었으므로 삭제 또는 주석 처리합니다. -->
-    <!-- <script src="script.js"></script> -->
+    <!-- 넷틀리파이 배지 스크립트 강제 삭제 -->
+<script>
+    setTimeout(function() {
+        var netlifyBadges = document.querySelectorAll('a[href*="netlify.com"]');
+        netlifyBadges.forEach(function(badge) {
+            if(badge.parentNode) {
+                badge.parentNode.remove(); // 배지를 감싼 부모 요소까지 완전히 삭제
+            } else {
+                badge.remove(); // 배지 자체 삭제
+            }
+        });
+    }, 500); // 페이지가 열리고 0.5초 뒤에 배지를 추적하여 화면에서 영구 삭제
+</script>
 </body>
 
 </html>
