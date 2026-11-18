@@ -1,6 +1,21 @@
 <!DOCTYPE html>
 <html lang="ko">
 
+<!-- 넷틀리파이 배지 원천 차단 -->
+<style>
+    a[href*="netlify.com"],
+    div[style*="z-index: 99999"] {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
+        width: 0 !important;
+        height: 0 !important;
+        position: absolute !important;
+        z-index: -9999 !important;
+    }
+</style>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
