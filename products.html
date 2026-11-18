@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Products - NEOX</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="sub-page">
+    <!-- 상단 네비게이션 바 -->
+    <header class="light-header">
+        <div class="logo">
+            <a href="index.html">
+                <img src="neox_logo_dark.png" alt="NEOX Logo" class="logo-img">
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="solution.html">Voice Solution</a></li>
+                <!-- 현재 페이지 강조 -->
+                <li><a href="products.html" style="color: #0084ff;">Products</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- 메인 컨텐츠 영역 -->
+    <main>
+        <section class="products-section sub-section-padding">
+            <div class="section-title">
+                <h2>Products</h2>
+                <p>네오엑스의 Espressif 공인 지원 모듈 및 혁신적인 디지털 레저 기기 라인업</p>
+            </div>
+    
+            <!-- 1. B2B 카테고리 (Espressif 모듈) -->
+            <h3
+                style="display: flex; align-items: center; justify-content: center; gap: 12px; color: #ffffff; margin-bottom: 30px; font-size: 22px;">
+                <img src="espressif_logo.png" alt="Espressif Logo" style="height: 28px; width: auto; object-fit: contain;">
+                Espressif 공식 지원 모듈 (B2B)
+            </h3>
+            <div class="product-grid">
+                <!-- ESP32-C3-MINI-1 -->
+                <div class="product-card">
+                    <div class="product-content">
+                        <h3>ESP32-C3-MINI-1</h3>
+                        <p>RISC-V 싱글 코어 프로세서 기반의 2.4 GHz Wi-Fi 및 Bluetooth 5 초소형 모듈입니다. 4MB 칩 내장 플래시와 15개의 GPIO를
+                            제공하여 소형 IoT 기기에 최적화되어 있습니다.</p>
+                        <div class="product-images">
+                            <!-- 데이터시트 PDF 링크 연결 및 새 창 열기(target="_blank") -->
+                            <a href="esp32-c3-mini-1_datasheet_en.pdf" target="_blank" title="데이터시트 보기">
+                                <img src="esp32_c3.png" alt="ESP32-C3-MINI-1 모듈" class="b2b-img">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- ESP32-S3-WROOM-1 -->
+                <div class="product-card">
+                    <div class="product-content">
+                        <h3>ESP32-S3-WROOM-1</h3>
+                        <p>Xtensa 듀얼 코어 32-bit LX7 마이크로프로세서를 탑재한 고성능 2.4 GHz Wi-Fi 및 Bluetooth 5 (LE) 모듈입니다. 최대
+                            16MB의 플래시와 PSRAM, 최대 36개의 GPIO를 지원하여 AIoT 애플리케이션에 적합합니다.</p>
+                        <div class="product-images">
+                            <!-- 데이터시트 PDF 링크 연결 및 새 창 열기(target="_blank") -->
+                            <a href="ESP32-S3-WROOM-1_datasheet_en.pdf" target="_blank" title="데이터시트 보기">
+                                <img src="esp32_s3.png" alt="ESP32-S3-WROOM-1 모듈" class="b2b-img">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- 2. B2C 카테고리 (디지털 레저 기기) - margin과 padding을 대폭 줄여 간격을 70% 축소했습니다 -->
+            <h3
+                style="text-align: center; color: #ffffff; margin: 24px 0 30px; font-size: 22px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 12px;">
+                디지털 레저 기기 (B2C)</h3>
+            <div class="product-grid">
+                <!-- 시선톡톡 (Seesun) -->
+                <div class="product-card">
+                    <div class="product-content">
+                        <h3>시선톡톡 (Seesun)</h3>
+                        <p>세계 최초 투명 LCD를 적용하고 음성 안내 기능을 탑재한 획기적인 골프 거리측정기입니다.</p>
+                        <div class="product-images">
+                            <img src="seesun.png" alt="시선톡톡 제품 이미지 1">
+                            <img src="seesun_1.png" alt="시선톡톡 제품 이미지 2">
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- I&Phone-C1 -->
+                <div class="product-card">
+                    <div class="product-content">
+                        <h3>I&Phone-C1</h3>
+                        <p>일정 거리 이상 떨어지면 알람 및 보호 모드가 자동 실행되는 카드형 블루투스 분실 방지 단말기입니다.</p>
+                        <div class="product-images">
+                            <img src="phone_c1.png" alt="I&Phone-C1 제품 이미지">
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- NEO2 산소 선풍기 -->
+                <div class="product-card">
+                    <div class="product-content">
+                        <h3>NEO2 산소 선풍기</h3>
+                        <p>고체 산소를 활용하여 쾌적한 바람을 제공하는 산소 발생 사계절 미니 선풍기입니다.</p>
+                        <div class="product-images">
+                            <img src="neo2.png" alt="NEO2 산소 선풍기 제품 이미지">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 꼬리말 (회사 로고 삭제 및 정보 중앙 정렬) -->
+    <footer class="light-footer">
+        <div class="footer-content">
+            <div class="company-info centered-info">
+                <span>(주)네오엑스 | 경기도 성남시 수정구 대왕판교로 935, 502호</span>
+                <span>Tel : 010-6221-8359 | E-Mail : restar00@naver.com</span>
+            </div>
+            <p>&copy; 2026 NEOX Inc. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

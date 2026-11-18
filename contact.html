@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Contact Us - NEOX</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="sub-page">
+    <!-- 상단 네비게이션 바 -->
+    <header class="light-header">
+        <div class="logo">
+            <a href="index.html">
+                <img src="neox_logo_dark.png" alt="NEOX Logo" class="logo-img">
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="solution.html">Voice Solution</a></li>
+                <li><a href="products.html">Products</a></li>
+                <!-- 현재 페이지 강조 -->
+                <li><a href="contact.html" style="color: #0084ff;">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- 메인 컨텐츠 영역 -->
+    <main>
+        <section class="contact-section sub-section-padding">
+            <div class="section-title">
+                <h2>Contact Us</h2>
+                <p>네오엑스의 기술과 솔루션 도입, B2B 제휴에 대한 문의를 남겨주세요.</p>
+            </div>
+
+            <div class="contact-container">
+                <!-- 좌측: 회사 정보 -->
+                <div class="contact-info">
+                    <h3>Get in Touch</h3>
+                    <p class="info-desc">30년 이상의 탁월한 R&D 인프라로<br>귀하의 상상을 완벽한 제품으로 구현해 드립니다.</p>
+
+                    <ul>
+                        <li>
+                            <strong>Address</strong>
+                            경기도 성남시 수정구 대왕판교로 935, 502호
+                        </li>
+                        <li>
+                            <strong>Phone</strong>
+                            010-6221-8359
+                        </li>
+                        <li>
+                            <strong>Email</strong>
+                            restar00@naver.com
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 우측: 문의 폼 -->
+                <div class="contact-form-wrapper">
+                    <!-- action 주소에 사용할 서비스의 URL을 넣게 됩니다 -->
+                    <form action="https://formspree.io/f/myeerewg" method="POST" class="contact-form">
+                        <!-- 폼 전송 완료 후 자동으로 이동할 홈 화면 주소 -->
+                        <input type="hidden" name="_next" value="http://127.0.0.1:5500/index.html">
+                        <!-- 서버가 데이터를 식별할 수 있도록 name 속성 추가 -->
+                        <input type="text" name="회사명_또는_이름" placeholder="이름 또는 회사명" required>
+                        <input type="email" name="회신용_이메일" placeholder="회신받으실 이메일 주소" required>
+                        <input type="text" name="문의_제목" placeholder="문의 제목" required>
+                        <textarea name="문의_상세내용" rows="6" placeholder="도입 희망 솔루션, H/W 및 S/W 개발 의뢰 등 상세 내용을 적어주세요." required></textarea>
+                
+                        <button type="submit" class="btn primary">문의 보내기</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 꼬리말 -->
+    <footer class="light-footer">
+        <div class="footer-content">
+            <div class="company-info centered-info">
+                <span>(주)네오엑스 | 경기도 성남시 수정구 대왕판교로 935, 502호</span>
+                <span>Tel : 010-6221-8359 | E-Mail : restar00@naver.com</span>
+            </div>
+            <p>&copy; 2026 NEOX Inc. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
