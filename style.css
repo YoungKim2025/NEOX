@@ -849,3 +849,12 @@ footer p {
         gap: 40px;
     }
 }
+
+/* 넷틀리파이 배지 강제 숨김 처리 */
+#netlify-badge,
+.netlify-badge,
+a[href^="https://www.netlify.com"] {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+}
