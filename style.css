@@ -1,4 +1,4 @@
-/* 웹 폰트 불러오기 (Pretendard) - 이 줄을 최상단에 추가하세요 */
+/* 웹 폰트 불러오기 (Pretendard) */
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
 
 /* =========================================
@@ -8,22 +8,20 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* 폰트 적용 순서 업데이트 */
     font-family: 'Pretendard', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
 }
 
 body {
     background-color: #0a1128;
-    /* 다크 네이비 기본 배경 (서브 섹션용) */
     color: #ffffff;
     overflow-x: hidden;
 }
 
 /* =========================================
-   1. 헤더 (Header - Light Theme)
+   1. 헤더 (Header - Sticky Light Theme)
 ========================================= */
 header {
-    position: fixed;
+    position: sticky;
     top: 0;
     width: 100%;
     padding: 12px 50px;
@@ -33,7 +31,7 @@ header {
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid #eaeaea;
-    z-index: 100;
+    z-index: 1000;
 }
 
 .logo {
@@ -43,7 +41,6 @@ header {
 
 .logo-img {
     height: 55px;
-    /* 기존 35px에서 원하는 크기(예: 50px, 60px 등)로 수치를 늘려주세요 */
     width: auto;
     object-fit: contain;
     image-rendering: -webkit-optimize-contrast;
@@ -65,7 +62,6 @@ nav a {
 
 nav a:hover {
     color: #0084ff;
-    /* 블루 톤 호버 */
 }
 
 /* =========================================
@@ -73,12 +69,12 @@ nav a:hover {
 ========================================= */
 .hero {
     position: relative;
-    height: 100vh;
+    min-height: calc(100vh - 80px);
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 0 20px;
+    padding: 60px 20px;
     background-image: url('vr_bg.jpg');
     background-size: cover;
     background-position: center;
@@ -92,7 +88,6 @@ nav a:hover {
     width: 100%;
     height: 100%;
     background: rgba(10, 17, 40, 0.7);
-    /* 텍스트 가독성을 위한 딤 처리 */
     z-index: 1;
 }
 
@@ -100,6 +95,7 @@ nav a:hover {
     position: relative;
     z-index: 2;
     max-width: 900px;
+    width: 100%;
 }
 
 .hero h1 {
@@ -107,28 +103,29 @@ nav a:hover {
     line-height: 1.4;
     font-weight: 700;
     margin-bottom: 20px;
+    word-break: keep-all;
 }
 
 .hero h1 span {
     color: #00bfff;
-    /* 블루 톤 포인트 */
 }
 
 .hero p {
-    font-size: 20px !important;
-    line-height: 1.7 !important;
-    color: #d1dfed !important;
+    font-size: 20px;
+    line-height: 1.7;
+    color: #d1dfed;
     margin-bottom: 40px;
     word-break: keep-all;
 }
 
 /* =========================================
-   3. 공통 버튼 (Buttons)
+   3. 공통 버튼 (Buttons & Multi-line)
 ========================================= */
 .cta-buttons {
     display: flex;
     justify-content: center;
     gap: 20px;
+    flex-wrap: wrap;
 }
 
 .btn {
@@ -162,18 +159,14 @@ nav a:hover {
     transform: translateY(-2px);
 }
 
-/* =========================================
-   3-2. 다중 줄(Multi-line) 버튼 공통 스타일
-========================================= */
-.multi-line-btn {
+.multi-line-btn,
+.espressif-btn {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: 12px 25px;
-    /* 두 줄 텍스트에 맞게 상하 여백 조절 */
     gap: 4px;
-    /* 메인 텍스트와 서브 텍스트 사이 간격 */
 }
 
 .btn-main-text {
@@ -185,27 +178,20 @@ nav a:hover {
     font-size: 12.5px;
     font-weight: 400;
     opacity: 0.85;
-    /* 서브 텍스트를 약간 연하게 처리하여 메인 텍스트 강조 */
     letter-spacing: -0.3px;
-    /* 긴 텍스트가 예쁘게 들어가도록 자간 미세 조정 */
 }
 
-/* Espressif 지원 버튼 덮어쓰기 (다중 줄 배치용으로 세로 정렬 변경) */
-.espressif-btn {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 12px 20px;
-    gap: 4px;
-}
-
-/* Espressif 로고와 메인 텍스트를 가로로 묶어주는 내부 래퍼 */
 .espressif-main {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 8px;
+}
+
+.espressif-logo {
+    height: 24px;
+    width: auto;
+    object-fit: contain;
 }
 
 /* =========================================
@@ -216,14 +202,16 @@ nav a:hover {
 }
 
 .sub-section-padding {
-    padding-top: 150px;
-    padding-bottom: 100px;
+    padding: 70px 20px 100px;
     min-height: calc(100vh - 150px);
 }
 
 .section-title {
+    position: relative;
+    z-index: 2;
     margin-bottom: 60px;
     text-align: center;
+    padding: 0 10px;
 }
 
 .section-title h2 {
@@ -233,9 +221,10 @@ nav a:hover {
 }
 
 .section-title p {
-    font-size: 20px !important;
-    color: #d1dfed !important;
+    font-size: 20px;
+    color: #d1dfed;
     line-height: 1.6;
+    word-break: keep-all;
 }
 
 .section-title strong {
@@ -247,16 +236,13 @@ nav a:hover {
 ========================================= */
 .solution-section {
     position: relative;
-    padding: 100px 20px;
+    padding: 70px 20px 100px;
     background-image: url('solution_bg.png');
-    /* 생성된 음성인식 배경 이미지 적용 */
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    /* 스크롤 시 배경 고정 효과 */
 }
 
-/* 텍스트 시인성을 위한 어두운 반투명 오버레이 */
 .solution-section::before {
     content: '';
     position: absolute;
@@ -265,11 +251,9 @@ nav a:hover {
     width: 100%;
     height: 100%;
     background: rgba(10, 17, 40, 0.85);
-    /* 배경 이미지를 은은하게 덮음 */
     z-index: 1;
 }
 
-/* 내부 컨텐츠(제목, 카드, 버튼)가 오버레이 위로 선명하게 보이도록 설정 */
 .solution-section .section-title,
 .solution-section .spec-grid,
 .solution-section .cta-buttons {
@@ -277,7 +261,6 @@ nav a:hover {
     z-index: 2;
 }
 
-/* 아래는 기존 스펙 카드 스타일 (유지) */
 .spec-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -301,16 +284,16 @@ nav a:hover {
 }
 
 .spec-card h3 {
-    font-size: 24px !important;
+    font-size: 24px;
     font-weight: 700;
     color: #ffffff;
     margin-bottom: 20px;
 }
 
 .spec-card p {
-    font-size: 17px !important;
-    line-height: 1.7 !important;
-    color: #b0c4de !important;
+    font-size: 17px;
+    line-height: 1.7;
+    color: #b0c4de;
     word-break: keep-all;
 }
 
@@ -318,13 +301,13 @@ nav a:hover {
    6. 제품 라인업 (Products)
 ========================================= */
 .products-section {
-    padding: 100px 20px;
+    padding: 70px 20px 100px;
     background-color: #0a1128;
 }
 
 .product-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
     gap: 40px;
     max-width: 1200px;
     margin: 0 auto;
@@ -354,28 +337,25 @@ nav a:hover {
 }
 
 .product-content h3 {
-    font-size: 26px !important;
+    font-size: 26px;
     font-weight: 700;
     color: #00bfff;
     margin-bottom: 15px;
 }
 
 .product-content p {
-    font-size: 18px !important;
-    line-height: 1.7 !important;
-    color: #b0c4de !important;
+    font-size: 18px;
+    line-height: 1.7;
+    color: #b0c4de;
     word-break: keep-all;
 }
 
-/* =========================================
-   6-2. 제품 라인업 내부 이미지 스타일
-========================================= */
 .product-images {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 15px;
-    margin-top: auto !important;
+    margin-top: auto;
     padding-top: 30px;
 }
 
@@ -394,9 +374,6 @@ nav a:hover {
     max-width: 48%;
 }
 
-/* =========================================
-   6-3. B2B 모듈 이미지 높이 고정 및 링크 효과
-========================================= */
 .b2b-img {
     height: 160px !important;
     width: auto;
@@ -413,133 +390,9 @@ nav a:hover {
     cursor: pointer;
 }
 
-
 /* =========================================
-   7. 컨택트 폼 (Contact Us)
+   7. 회사 소개 (About Us, Team, Patents)
 ========================================= */
-.contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    width: 100%;
-}
-
-.contact-form input,
-.contact-form select,
-.contact-form textarea {
-    display: block;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-/* =========================================
-   8. 꼬리말 (Footer - Light Theme)
-========================================= */
-footer {
-    background-color: #f8f9fa;
-    border-top: 1px solid #e0e0e0;
-    padding: 26px 20px;
-    color: #666666;
-    display: flex;
-    justify-content: center;
-}
-
-.footer-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
-
-/* 회사 주소 및 연락처 텍스트 진하게 */
-.company-info {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 15px;
-    color: #222222;
-    /* 기존 #444444에서 더 짙은 검정색으로 변경 */
-    font-size: 15px;
-    font-weight: 700;
-    /* 기존 500에서 700(bold)으로 변경하여 두껍게 처리 */
-}
-
-/* 하단 카피라이트(Copyright) 텍스트 진하게 */
-footer p {
-    color: #555555;
-    /* 기존 #888888에서 더 짙게 변경 */
-    font-size: 13px;
-    font-weight: 600;
-    /* 폰트 두께 속성 추가 */
-}
-
-.company-info span {
-    display: block;
-}
-
-/* =========================================
-   9. 모바일 반응형 (Responsive)
-========================================= */
-@media screen and (max-width: 768px) {
-    header {
-        flex-direction: column;
-        padding: 12px 20px;
-        gap: 15px;
-    }
-
-    nav ul {
-        gap: 15px;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    nav a {
-        font-size: 14px;
-    }
-
-    .hero h1 {
-        font-size: 28px;
-        line-height: 1.3;
-        margin-bottom: 15px;
-    }
-
-    .hero p {
-        font-size: 14px;
-        line-height: 1.5;
-        padding: 0 10px;
-        margin-bottom: 30px;
-    }
-
-    .cta-buttons {
-        flex-direction: column;
-        gap: 15px;
-        width: 100%;
-        max-width: 300px;
-        margin: 0 auto;
-    }
-
-    .btn {
-        width: 100%;
-        text-align: center;
-    }
-
-    .company-info {
-        font-size: 12px;
-    }
-}
-
-/* =========================================
-   10. 회사 소개 (About Us) 
-========================================= */
-.about-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 0 20px;
-}
-
-/* about-section의 배경을 생성된 이미지로 설정 */
 .about-section {
     position: relative;
     background-image: url('about_bg.jpg');
@@ -549,10 +402,9 @@ footer p {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 0 20px;
+    padding: 70px 20px 100px;
 }
 
-/* 텍스트 시인성을 위해 어두운 반투명 막(오버레이) 추가 */
 .about-section::before {
     content: '';
     position: absolute;
@@ -561,18 +413,16 @@ footer p {
     width: 100%;
     height: 100%;
     background: rgba(10, 17, 40, 0.82);
-    /* 이미지를 자연스럽게 어둡게 덮음 */
     z-index: 1;
 }
 
-/* 컨테이너 및 내부 요소들이 오버레이 위로 오도록 함 */
-.about-container,
-.section-title {
+.about-container {
     position: relative;
     z-index: 2;
+    width: 100%;
+    max-width: 1200px;
 }
 
-/* 기업 개요 텍스트 중앙 정렬 및 여백 확보 */
 .about-text {
     text-align: center;
     padding: 60px 40px;
@@ -597,9 +447,6 @@ footer p {
     word-break: keep-all;
 }
 
-/* =========================================
-   11. R&D 맨파워 (Team Section)
-========================================= */
 .team-section {
     margin-bottom: 50px;
     text-align: center;
@@ -614,7 +461,6 @@ footer p {
     padding-bottom: 10px;
 }
 
-/* 제목 아래 파란색 밑줄 효과 */
 .team-section h4::after {
     content: '';
     position: absolute;
@@ -629,10 +475,8 @@ footer p {
 
 .team-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    /* 카드 너비 넓힘 */
+    grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
     gap: 30px;
-    /* 카드 간 간격 넓힘 */
 }
 
 .team-card {
@@ -641,7 +485,6 @@ footer p {
     border-radius: 15px;
     padding: 35px 25px;
     text-align: center;
-    /* 카드 내용도 중앙 정렬 */
     transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
@@ -664,11 +507,9 @@ footer p {
     color: #b0c4de;
     margin-bottom: 10px;
     line-height: 1.7;
+    word-break: keep-all;
 }
 
-/* =========================================
-   11-2. 핵심 보유 특허 (Patent List) 디자인 보강
-========================================= */
 .patent-list {
     background: rgba(255, 255, 255, 0.02);
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -697,6 +538,7 @@ footer p {
     position: relative;
     padding-left: 30px;
     line-height: 1.6;
+    word-break: keep-all;
 }
 
 .patent-list ul li::before {
@@ -708,41 +550,14 @@ footer p {
     font-size: 18px;
 }
 
-/* Espressif 지원 버튼 내 로고 및 텍스트 정렬 */
-.espressif-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    /* 로고와 텍스트 사이의 간격 */
-    padding: 10px 25px;
-    /* 로고 크기를 고려해 상하 패딩을 미세 조정 */
-}
-
-.espressif-logo {
-    height: 24px;
-    /* 버튼 높이에 맞춘 로고 사이즈 */
-    width: auto;
-    object-fit: contain;
-}
-
-/* 모바일 화면에서 3개의 버튼이 넘칠 경우 대응 */
-@media screen and (max-width: 768px) {
-    .cta-buttons {
-        max-width: 100%;
-        padding: 0 20px;
-    }
-}
-
 /* =========================================
-   13. 문의하기 (Contact Us)
+   8. 문의하기 (Contact Us)
 ========================================= */
 .contact-container {
     max-width: 1000px;
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    /* 좌우 5:5 분할 */
     gap: 50px;
     background: linear-gradient(145deg, #111a3a, #0a1128);
     border: 1px solid #1a254c;
@@ -751,19 +566,19 @@ footer p {
     box-shadow: 5px 5px 25px rgba(0, 0, 0, 0.4);
 }
 
-/* 좌측 정보 영역 */
 .contact-info h3 {
     color: #00bfff;
     margin-bottom: 15px;
-    font-size: 28px !important;
+    font-size: 28px;
     font-weight: 700;
 }
 
 .contact-info .info-desc {
-    color: #b0c4de !important;
-    font-size: 17px !important;
-    line-height: 1.7 !important;
+    color: #b0c4de;
+    font-size: 17px;
+    line-height: 1.7;
     margin-bottom: 40px;
+    word-break: keep-all;
 }
 
 .contact-info ul {
@@ -773,8 +588,9 @@ footer p {
 .contact-info li {
     margin-bottom: 25px;
     color: #e0e0e0;
-    font-size: 18px !important;
-    line-height: 1.6 !important;
+    font-size: 18px;
+    line-height: 1.6;
+    word-break: keep-all;
 }
 
 .contact-info li strong {
@@ -786,7 +602,6 @@ footer p {
     letter-spacing: 1px;
 }
 
-/* 우측 입력 폼 영역 */
 .contact-form-wrapper {
     width: 100%;
 }
@@ -799,17 +614,16 @@ footer p {
 }
 
 .contact-form input,
+.contact-form select,
 .contact-form textarea {
     display: block;
     width: 100%;
-    box-sizing: border-box;
     background: rgba(255, 255, 255, 0.05);
-    /* 반투명한 어두운 입력창 */
     border: 1px solid rgba(0, 132, 255, 0.2);
     border-radius: 8px;
-    padding: 18px !important;
+    padding: 18px;
     color: #ffffff;
-    font-size: 16px !important;
+    font-size: 16px;
     transition: all 0.3s ease;
 }
 
@@ -818,8 +632,8 @@ footer p {
     color: #667699;
 }
 
-/* 입력창 선택(포커스) 시 효과 */
 .contact-form input:focus,
+.contact-form select:focus,
 .contact-form textarea:focus {
     outline: none;
     border-color: #0084ff;
@@ -829,7 +643,6 @@ footer p {
 
 .contact-form textarea {
     resize: vertical;
-    /* 세로로만 크기 조절 가능하게 설정 */
 }
 
 .contact-form .btn {
@@ -840,21 +653,154 @@ footer p {
     padding: 16px 30px;
 }
 
-/* 모바일 화면 대응 */
-@media screen and (max-width: 768px) {
-    .contact-container {
-        grid-template-columns: 1fr;
-        /* 세로로 1단 배치 */
-        padding: 40px 25px;
-        gap: 40px;
-    }
+/* =========================================
+   9. 꼬리말 (Footer - Light Theme)
+========================================= */
+footer {
+    background-color: #f8f9fa;
+    border-top: 1px solid #e0e0e0;
+    padding: 26px 20px;
+    color: #666666;
+    display: flex;
+    justify-content: center;
 }
 
-/* 넷틀리파이 배지 강제 숨김 처리 */
-#netlify-badge,
-.netlify-badge,
-a[href^="https://www.netlify.com"] {
-    display: none !important;
-    opacity: 0 !important;
-    visibility: hidden !important;
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.company-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 15px;
+    color: #222222;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.company-info span {
+    display: block;
+}
+
+footer p {
+    color: #555555;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+/* =========================================
+   10. 모바일 반응형 (Responsive - 768px 이하)
+========================================= */
+@media screen and (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 12px 20px;
+        gap: 12px;
+    }
+
+    .logo-img {
+        height: 44px;
+    }
+
+    nav ul {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    nav a {
+        font-size: 14px;
+    }
+
+    .hero,
+    .solution-section,
+    .about-section {
+        background-attachment: scroll;
+    }
+
+    .hero {
+        min-height: calc(100vh - 105px);
+        padding: 45px 20px;
+    }
+
+    .hero h1 {
+        font-size: 28px;
+        line-height: 1.35;
+        margin-bottom: 15px;
+    }
+
+    .hero p {
+        font-size: 15px;
+        line-height: 1.6;
+        padding: 0 8px;
+        margin-bottom: 30px;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+        max-width: 320px;
+        margin: 0 auto;
+    }
+
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .sub-section-padding,
+    .solution-section,
+    .products-section,
+    .about-section {
+        padding: 50px 20px 70px;
+    }
+
+    .section-title {
+        margin-bottom: 40px;
+    }
+
+    .section-title h2 {
+        font-size: 28px;
+    }
+
+    .section-title p {
+        font-size: 16px;
+    }
+
+    .about-text,
+    .patent-list {
+        padding: 35px 22px;
+    }
+
+    .about-text h3 {
+        font-size: 22px;
+    }
+
+    .about-text p {
+        font-size: 16px;
+    }
+
+    .contact-container {
+        grid-template-columns: 1fr;
+        padding: 35px 22px;
+        gap: 35px;
+    }
+
+    .contact-info h3 {
+        font-size: 24px;
+    }
+
+    .contact-info li {
+        font-size: 16px;
+    }
+
+    .company-info {
+        font-size: 12px;
+    }
 }

@@ -73,20 +73,6 @@
             <p>&copy; 2026 NEOX Inc. All rights reserved.</p>
         </div>
     </footer>
-
-    <!-- 넷틀리파이 배지 스크립트 강제 삭제 -->
-<script>
-    setTimeout(function() {
-        var netlifyBadges = document.querySelectorAll('a[href*="netlify.com"]');
-        netlifyBadges.forEach(function(badge) {
-            if(badge.parentNode) {
-                badge.parentNode.remove(); // 배지를 감싼 부모 요소까지 완전히 삭제
-            } else {
-                badge.remove(); // 배지 자체 삭제
-            }
-        });
-    }, 500); // 페이지가 열리고 0.5초 뒤에 배지를 추적하여 화면에서 영구 삭제
-</script>
 </body>
 
 </html>
