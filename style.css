@@ -28,8 +28,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
+    background-color: #ffffff;
     border-bottom: 1px solid #eaeaea;
     z-index: 1000;
 }
@@ -44,6 +43,7 @@ header {
     width: auto;
     object-fit: contain;
     image-rendering: -webkit-optimize-contrast;
+    mix-blend-mode: multiply;
 }
 
 nav ul {
