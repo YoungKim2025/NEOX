@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://neox.kr/sitemap.xml
